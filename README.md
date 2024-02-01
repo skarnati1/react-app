@@ -1,0 +1,1 @@
+This is a sample git application to learn react app
