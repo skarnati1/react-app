@@ -1,5 +1,7 @@
 
 /** createlement will create an object. Dom.render will make use of that objecta nd convert it to html tags */
+import React from "react";
+import ReactDOM from "react-dom/client";
 const parent = React.createElement(
     "div",
      {id:"parent"},[
