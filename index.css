@@ -1,4 +1,4 @@
-.header{
+/* .header{
     display: flex;
     justify-content: space-between;
     border: 1px solid blue;
@@ -15,13 +15,15 @@
 
 .nav-items >ul >li {
     margin: 10px;
+    cursor: pointer;
 }
 
 .res-card {
     margin: 5px;
     width: 200px;
     height: 360px;
-    background-color: darkgrey;
+    background-color: #f0f0f0;
+    padding: 8px;
     
 }
 .res-container{
@@ -45,3 +47,43 @@
     margin: 8px;
     cursor: pointer;
 }
+.login-btn{
+    cursor: pointer;
+    margin: 10px;
+}
+.filter {
+    display: flex;
+}
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+    height: 400px;
+    width: 200px;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+.menu-card{
+    text-align: center;
+}
+.memu-item{
+    font-size: 18px;
+}
+.item-cost{
+    font-size: 14px !important;
+    color: f0f0f0 ;
+}
+
+.user-card {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
