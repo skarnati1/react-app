@@ -39,15 +39,13 @@ const RestaurantMenu = () => {
     // console.log({cards});
 
   return  (
-    <div className=' text-center'>
-      <div className='my-4 mx-6 text-left'>
-        <h1 className='font-bold text-2xl'>{name}</h1>
-        <p className='font-bold'>{cuisines.join(', ')}</p>
+    <div className='text-center'>
+      {/* <div className='my-4 mx-6'> */}
+        <h1 className='my-6 font-bold text-2xl'>{name}</h1>
+        <p className='font-bold rexr-lg'>{cuisines.join(', ')}</p>
         <h3>{costForTwoMessage}</h3>
-        <h2>Menu</h2>
-      </div>
-        
-        <ul>{
+      {/* </div> */}
+      {
             
             categories.map((item, index)=> (
               item?.card?.card["@type"].includes("ItemCategory") ?
@@ -58,7 +56,6 @@ const RestaurantMenu = () => {
                 // <li id='{item.card.info.id}'>{item.card.info.name} -{" Rs."}{item.card.info.price/100 || item.card.info.defaultPrice/100}</li>
                 )
             )}
-        </ul>
     </div>
   );
 }

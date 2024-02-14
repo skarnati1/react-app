@@ -1,10 +1,13 @@
 import React from 'react'
 import Header from './Header'
+import Accordion from './Accoridan';
 
 const Contact = () => {
   return (
     <div>
-        Contact</div>
+        Contact
+        <Accordion />
+        </div>
   )
 }
 

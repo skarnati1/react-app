@@ -1,21 +1,25 @@
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import restList from "../mocks/restListMock";
 import yelpListMock from "../mocks/yelpListMock";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import useGetStatus from "../utils/useGetStatus";
 import { korramngala_LOC_API } from "../utils/constants";
+import UserContext from "./UserContext";
 
 const Body = () =>{
     console.log("body rendered")
     const [listOfRestaurants, setListOfRestaurant] = useState([]);
     const [filteredRestaurants, setFilteredRestaurant] = useState([]);
     const [searchText, setSearchText] = useState("");
+    const {loggedInUser, setUserName} = useContext(UserContext);
 
     useEffect(() => {
         fetchData();
     }, []);
+
+    
 
     let headers1 = new Headers();
     const RestaurantWithPromotedLabel = withPromotedLabel(RestaurantCard);
@@ -51,6 +55,8 @@ const Body = () =>{
         //     headers: {'Authorization': 'Bearer IBLhllP93Kp2uBT9ZWTPxlviJ8QNwBH3r_eBP7SNO4iD9DrxWpc54iMiwsQu35YwmeCsEITcGXo4iThYw56LYs0AFe4AU9CXhpGfie_QPqgNkRFRLDjK5yx2MGLCZXYx',"Access-Control-Allow-Origin":"*"}
         // }
         );
+
+        
 
         const json = await data.json();
         // setListOfRestaurant
@@ -90,10 +96,14 @@ const Body = () =>{
                     }}>Search</button>
                 </div>
                 <div className="search p-4 m-4 flex items-center ">
-                <button className="m-4 px-4 py-2 bg-gray-100 rounded-md" onClick={() =>{
-                    const filteredList = listOfRestaurants.filter((res) =>  res.data.avgRating > "4.0"); 
-                    setFilteredRestaurant(filteredList);
-                }}>Top Rated Restaurants</button>
+                    <button className="m-4 px-4 py-2 bg-gray-100 rounded-md" onClick={() =>{
+                        const filteredList = listOfRestaurants.filter((res) =>  res.data.avgRating > "4.0"); 
+                        setFilteredRestaurant(filteredList);
+                    }}>Top Rated Restaurants</button>
+                </div>
+                <div className="search p-4 m-4 flex items-center ">
+                    <input className=" border border-black" value={loggedInUser}
+                    onChange={(e)=> setUserName(e.target.value)}></input>
                 </div>
                 
                 

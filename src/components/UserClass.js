@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import UserContext from './UserContext';
 
 class UserClass extends React.Component {
 
@@ -40,6 +41,11 @@ class UserClass extends React.Component {
                 <h2>Name : {name}</h2>
                 <h3>Location: {location}</h3>
                 <h4>Contact: {login}</h4>
+                <h4><UserContext.Consumer>
+                    {(data)=>
+                        <p>LoggedIn User:{data.loggedInUser}</p>
+                    }
+                    </UserContext.Consumer> </h4>
                 <Link to={url}>Profile Link</Link>
             </div>
         )

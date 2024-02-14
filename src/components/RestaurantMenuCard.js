@@ -14,7 +14,7 @@ const RestaurantMenuCard = ({resMenuCard, showItems, setShowIndex}) => {
     // console.log('item- menu-cards :', itemCards);
     const handleClick = () =>{
       // setShowItems(!showItems);
-      setShowIndex();
+      setShowIndex(!showItems);
     }
   return   (
     <div className='w-6/12 mx-auto my-4 bg-gray-100 shadow-lg p-4'>
